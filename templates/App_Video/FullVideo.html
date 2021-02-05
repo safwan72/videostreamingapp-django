@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load embed_video_tags %}
+{% load crispy_forms_tags %}
+{% block body_block %}
+
+
+{% video video.video '100% x 480' query="rel=0&wmode=transparent" is_secure=True  %}
+<h2 class='mx-5 my-2'> {{video.title}} </h2>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-6">
+      <p>{{video.description|linebreaks}} </p>
+    </div>
+    <div class="col-md-6">
+      <form method="POST">
+        {{form|crispy}}
+        {% csrf_token %}
+        <br>
+        <button type="submit"  class="btn btn-info mb-3 w-100">Comment</button>
+      </form>
+      <ul class="list-group my-3">
+        {% for comment in video.video_comment.all %}
+        <li class="list-group-item d-flex justify-content-around">
+          <b>{{comment.user}} =====> </b>
+          <p>{{comment}}</p>
+         <p> {{comment.commented_at|date:"D, d M,Y"}} </p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% endblock body_block %}

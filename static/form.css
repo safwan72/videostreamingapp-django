@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.main {
+    width: 40%;
+    background-color: black;
+    opacity: 0.7;
+    margin: 0 auto;
+    padding: 1em 0.8em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1.5em;
+    outline-style: none;
+    text-align: left;
+}
+
+.main input {
+    text-align: justify;
+    width: 60%;
+    padding: 0.4em;
+    margin-bottom: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: .25em;
+}
+
+.main h1 {
+    font-weight: bolder;
+    text-align: center;
+    color: whitesmoke;
+    margin-bottom: 1em;
+}
+
+.main label {
+    display: inline-block;
+    width: 28%;
+    margin-left: .75em;
+    color: whitesmoke;
+}
+
+.main input[type="submit"] {
+    text-align: center;
+    background-color: yellowgreen;
+    padding: 0.5em;
+    width: 60%;
+    display: block;
+    margin-bottom: .5em;
+    margin-top: 1.5em;
+}
+
+.main input[type="submit"]:hover {
+    cursor: pointer;
+
+}
+
+@media (min-width:400px) and(max-width:800) {
+
+    .main input,
+    .main label {
+        width: 55%;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+    }
+
+
+    .main {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width:1120px) {
+
+    .main input,
+    .main label {
+        width: 75%;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .main {
+        width: 60%;
+        margin: 0 auto;
+    }
+}

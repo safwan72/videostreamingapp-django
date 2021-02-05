@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load embed_video_tags %}
+
+{% block body_block %}
+<div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for video in videos %}
+        <div class="col">
+            <a href="{% url 'App_Video:details' pk=video.pk %}" style="text-decoration: none;color:black;font-weight:bold" title="{{video.title}}">
+                <div class="card">
+                    {% video video.video as my_video %}
+                    <img src="{{my_video.thumbnail}}" class="card-img-top" alt="">
+                    {% endvideo %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{video.title}}</h5>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+{% endblock body_block %}

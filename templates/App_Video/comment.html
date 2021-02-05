@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+
+<div class="container my-5">
+
+ <form method="post">
+{{form|crispy}}
+</form> 
+</div>
+
+
+{% endblock body_block %}

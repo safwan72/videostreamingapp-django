@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}  
+{% block body_block %}
+  
+
+<div class="container my-5">
+
+    <div class="main">
+        <h1>Sign Up</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="firstname"> {{form.username.label}} :</label>&nbsp;&nbsp;
+            {{form.username}}
+            <label for="email"> {{form.email.label}} :</label>&nbsp;&nbsp;
+            {{form.email}}
+            <label for="password"> {{form.password1.label}} : </label>&nbsp;&nbsp;
+            {{form.password1}}
+            <label for="cpassword"> {{form.password2.label}} :</label>&nbsp;&nbsp;&nbsp;
+            {{form.password2}}
+            <input type="submit" value="Sign Up!" class="btn"><br>
+        </form>
+        <a href="{% url 'App_Login:login' %}" class='mx-5 btn btn-dark'>Already Have An Account? Login</a>
+    </div>
+
+</div>
+
+
+
+{% endblock body_block %}
+

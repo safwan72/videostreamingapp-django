@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}  
+{% block body_block %}
+  
+<div class="container my-5">
+
+    <div class="main">
+        <h1>Login</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="firstname"> {{form.username.label}} :</label>&nbsp;&nbsp;
+            {{form.username}}
+            <label for="password"> {{form.password.label}} : </label>&nbsp;&nbsp;
+            {{form.password}}
+            <input type="submit" value="Login!" class="btn"><br>
+        </form>
+        <a href="{% url 'App_Login:signup' %}" class='mx-5 btn btn-dark'>Dont Have An Account? Sign Up</a>
+    </div>
+
+</div>
+
+
+{% endblock body_block %}
+
