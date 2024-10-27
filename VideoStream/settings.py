@@ -46,9 +46,11 @@ INSTALLED_APPS = [
     'App_Video',
     'debug_toolbar',
     'crispy_forms',
+    'crispy_bootstrap4',
     'embed_video',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
